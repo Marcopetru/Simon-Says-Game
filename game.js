@@ -4,7 +4,7 @@ var userClickedPattern = [];
 var gameHasStarted = false;
 var level = 0;
 
-$("#level-title").click(function() { //seteamos primer valor de la secuencia del juego y cambiamos el titulo
+$(document).keypress(function() { //seteamos primer valor de la secuencia del juego y cambiamos el titulo
     if (!gameHasStarted) {
         $("#level-title").text("Level " + level);
         nextSequence();
@@ -35,7 +35,7 @@ function checkAnswer(currentLevel) {
         setTimeout(function() { //si la termino y coinciden los ultimos valores llama al proximo nivel
             $("body").removeClass("game-over");
         }, 200);
-        $("#level-title").text("Game Over, Press This Title To Restart");
+        $("#level-title").text("Game Over, Press Any Key to Restart");
         startOver();
     }
 
